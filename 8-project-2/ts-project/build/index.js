@@ -37,8 +37,14 @@ sorter.sort();
 console.log(sorter.collection)
 */
 var NumbersCollection_1 = require("./NumbersCollection");
+var CharactersCollection_1 = require("./CharactersCollection");
 var Sorter_1 = require("./Sorter");
 var numbersCollection = new NumbersCollection_1.NumbersCollection([10, 3, -5, 0]);
 var sorter = new Sorter_1.Sorter(numbersCollection);
 sorter.sort();
 console.log(numbersCollection.data);
+/** Characters Collection **/
+var charactersCollection = new CharactersCollection_1.CharactersCollection('Xaayb');
+var sorterChars = new Sorter_1.Sorter(charactersCollection);
+sorterChars.sort();
+console.log(charactersCollection.data);

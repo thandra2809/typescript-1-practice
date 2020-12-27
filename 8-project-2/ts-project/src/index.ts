@@ -35,6 +35,7 @@ sorter.sort();
 console.log(sorter.collection)
 */
 import {NumbersCollection} from "./NumbersCollection";
+import {CharactersCollection} from "./CharactersCollection";
 import {Sorter} from "./Sorter";
 
 const numbersCollection = new NumbersCollection([10,3,-5,0]);
@@ -42,3 +43,10 @@ const sorter = new Sorter(numbersCollection);
 sorter.sort();
 
 console.log(numbersCollection.data)
+
+/** Characters Collection **/
+const charactersCollection = new CharactersCollection('Xaayb');
+const sorterChars = new Sorter(charactersCollection);
+sorterChars.sort();
+
+console.log(charactersCollection.data)

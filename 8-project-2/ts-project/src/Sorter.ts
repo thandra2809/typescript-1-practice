@@ -1,8 +1,13 @@
-import {NumbersCollection} from "./NumbersCollection";
+interface Sortable {
+    length: number;
+    compare(leftIndex: number, rightIndex: number): boolean;
+    swap(leftIndex: number, rightIndex: number): void
+}
+
 
 export class Sorter {
 
-    constructor(public collection: NumbersCollection /** TODO number[] | string**/) {
+    constructor(public collection: Sortable) {
     }
 
     sort(): void {
