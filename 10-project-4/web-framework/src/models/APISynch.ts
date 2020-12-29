@@ -4,7 +4,7 @@ interface HasId {
     id?: number;
 }
 
-export class Synch<T extends HasId> {
+export class APISynch<T extends HasId> {
 
     constructor(public rootUrl: string) {
 
