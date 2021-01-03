@@ -1,5 +1,7 @@
 import {User, UserProps} from "../models/User";
 import {View} from "./View";
+import {UserShow} from "./UserShow";
+import {UserForm} from "./UserForm";
 
 export class UserEdit extends View<User, UserProps> {
 
@@ -7,14 +9,24 @@ export class UserEdit extends View<User, UserProps> {
             return {}
         }*/
 
+    regionsMap(): { [key: string]: string } {
+        return {
+            userShow: '.user-show',
+            userForm: '.user-form'
+        }
+    }
+
+    onRender(): void {
+        new UserShow(this.regions.userShow, this.model).render();
+        new UserForm(this.regions.userForm, this.model).render();
+    }
+
     template(): string {
 
         return `
           <div>
-          <h2>User Details</h2>
-          <div>User Name: ${this.model.get('name')}</div>
-          <div>User Age: ${this.model.get('age')}</div>
-          <br>
+            <div class="user-show"></div>
+            <div class="user-form"></div>
           </div>
           `;
     }

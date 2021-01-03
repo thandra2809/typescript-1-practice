@@ -26,6 +26,8 @@ collection.fetch()
 
 */
 
+/** Before nested regions map*/
+/*
 import {UserForm} from "./view/UserForm";
 import {User} from "./models/User";
 
@@ -37,4 +39,18 @@ if (rootElement) {
 
     userForm.render();
 }
+*/
 
+
+/** After nested regions map - complete automation of UI*/
+
+import {UserEdit} from "./view/UserEdit";
+import {User} from "./models/User";
+
+const user = User.buildUser({id: 3, name: 'Shreyus', age: 3})
+
+const rootElement = document.getElementById('root');
+if (rootElement) {
+    const userEdit = new UserEdit(rootElement, user);
+    userEdit.render();
+}
